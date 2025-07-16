@@ -62,7 +62,7 @@ def generate_story_from_images(images: List[Image.Image], style: str) -> str:
 
     try:
         configure_api()  # Configure API every time to ensure it's set
-        model = genai.GenerativeModel("gemini-2.5-pro")
+        model = genai.GenerativeModel("gemini-1.5-flash-latest")
         prompt_text = create_advanced_prompt(style)
 
         prompt_parts = [prompt_text] + images

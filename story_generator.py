@@ -62,7 +62,7 @@ def generate_story_from_images(images: List[Image.Image], style: str) -> str:
 
     try:
         configure_api()  # Configure API every time to ensure it's set
-        model = genai.GenerativeModel("gemini-1.5-flash-latest")
+        model = genai.GenerativeModel("gemini-2.5-flash-lite")
         prompt_text = create_advanced_prompt(style)
 
         prompt_parts = [prompt_text] + images
@@ -96,3 +96,4 @@ def narrate_story(story_text: str) -> BytesIO:
     except Exception as e:
         error_msg = f"An unexpected error occurred during the API call: {e}"
         return error_msg
+
